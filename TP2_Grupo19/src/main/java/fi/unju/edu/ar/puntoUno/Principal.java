@@ -15,7 +15,6 @@ public class Principal {
 		numero = teclado.nextInt();
 		
 		
-		
 		if(numero < 10) {
 			for(int i = 1; i <= numero; i++) {
 				factorial *= i;
