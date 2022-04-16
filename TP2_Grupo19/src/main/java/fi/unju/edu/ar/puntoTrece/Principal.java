@@ -10,7 +10,6 @@ public class Principal {
 		
 		empleado1.setHorasTrabajadas(161);
 		
-		
 	
 		System.out.println("El sueldo que le corresponde es: " + empleado1.calcularSueldo());
 	}
