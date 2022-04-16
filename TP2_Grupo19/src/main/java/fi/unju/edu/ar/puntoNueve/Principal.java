@@ -9,6 +9,7 @@ public class Principal {
 		
 		for (int i = 320; i >= 160;) {
 			System.out.println(i);
+
 			i -= 20;
 		}
 		
