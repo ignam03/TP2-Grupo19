@@ -93,8 +93,9 @@ public class ProcesoFecha {
 		return periodo;
 	}
 	
-	public String formatearFecha( ) {
+	public String formatearFecha( String fecha ) {
 			
+		return fecha;
 	}
 	
 	
