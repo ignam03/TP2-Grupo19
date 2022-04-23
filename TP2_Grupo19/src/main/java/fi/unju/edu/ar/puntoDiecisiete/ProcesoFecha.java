@@ -12,8 +12,8 @@ public class ProcesoFecha {
 	private LocalDate fecha2;
 	private LocalTime time1;
 	private LocalTime time2;
-	private LocalDateTime locatime1;
-	private LocalDateTime locatime2;
+	private LocalDateTime locaTime1;
+	private LocalDateTime locaTime2;
 
 	public ProcesoFecha() {
 
@@ -30,8 +30,8 @@ public class ProcesoFecha {
 	}
 
 	public ProcesoFecha(LocalDateTime locatime1, LocalDateTime locatime2) {
-		this.locatime1 = locatime1;
-		this.locatime2 = locatime2;
+		this.locaTime1 = locatime1;
+		this.locaTime2 = locatime2;
 	}
 
 	public LocalDate getFecha1() {
@@ -67,19 +67,19 @@ public class ProcesoFecha {
 	}
 
 	public LocalDateTime getLocatime1() {
-		return locatime1;
+		return locaTime1;
 	}
 
 	public void setLocatime1(LocalDateTime locatime1) {
-		this.locatime1 = locatime1;
+		this.locaTime1 = locatime1;
 	}
 
 	public LocalDateTime getLocatime2() {
-		return locatime2;
+		return locaTime2;
 	}
 
 	public void setLocatime2(LocalDateTime locatime2) {
-		this.locatime2 = locatime2;
+		this.locaTime2 = locatime2;
 	}
 
 	public Period contarTiempoTranscurrido() {
