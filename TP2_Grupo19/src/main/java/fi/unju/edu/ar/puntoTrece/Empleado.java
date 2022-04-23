@@ -4,7 +4,7 @@ import java.util.Calendar;
 public class Empleado {
 
 	private String nombre;
-	private Calendar fechaIngreso;
+	private String fechaIngreso;
 	private int legajo;
 	private String email;
 	private int sueldo;
@@ -19,16 +19,16 @@ public class Empleado {
 	
 	public Empleado(String nombre, int legajo, int horasTrabajadas) {
 		this.nombre = nombre;
-		this.legajo = -999;
+		this.legajo = -9999;
 		this.horasTrabajadas = horasTrabajadas;
 	}
 	
 	
 	//Constructor con parametros nombre, fechaIngreso, horasTrabajadas
 	
-	public Empleado(String nombre, Calendar fechaIngreso, int horasTrabajadas) {
+	public Empleado(String nombre, String fechaIngreso, int horasTrabajadas) {
 		this.nombre = nombre;
-		this.fechaIngreso = fechaIngreso;
+		this.fechaIngreso = "1900-01-01";
 		this.horasTrabajadas = horasTrabajadas;
 	}
 	
@@ -49,11 +49,11 @@ public class Empleado {
 		this.nombre = nombre;
 	}
 
-	public Calendar getFechaIngreso() {
+	public String getFechaIngreso() {
 		return fechaIngreso;
 	}
 
-	public void setFechaIngreso(Calendar fechaIngreso) {
+	public void setFechaIngreso(String fechaIngreso) {
 		this.fechaIngreso = fechaIngreso;
 	}
 
@@ -95,10 +95,10 @@ public class Empleado {
 		
 		int precioHora = 600;
 		
-		if(this.horasTrabajadas <= 160) {
+		if(this.horasTrabajadas < 160) {
 			this.sueldo = this.horasTrabajadas * precioHora;
 		}
-		else if(this.horasTrabajadas >=160) {
+		else if(this.horasTrabajadas >= 160) {
 			this.sueldo = this.horasTrabajadas * (precioHora + 50);
 		}
 		
