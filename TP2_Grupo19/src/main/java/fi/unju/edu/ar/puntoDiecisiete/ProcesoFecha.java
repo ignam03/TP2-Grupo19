@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.Period;
+import java.time.format.DateTimeFormatter;
 
 public class ProcesoFecha {
 
@@ -11,11 +12,11 @@ public class ProcesoFecha {
 	private LocalDate fecha2;
 	private LocalTime time1;
 	private LocalTime time2;
-	private LocalDateTime dateTime1;
-	private LocalDateTime dateTime2;
-	
+	private LocalDateTime locatime1;
+	private LocalDateTime locatime2;
+
 	public ProcesoFecha() {
-		
+
 	}
 
 	public ProcesoFecha(LocalDate fecha1, LocalDate fecha2) {
@@ -28,10 +29,9 @@ public class ProcesoFecha {
 		this.time2 = time2;
 	}
 
-	public ProcesoFecha(LocalDateTime dateTime1, LocalDateTime dateTime2) {
-		super();
-		this.dateTime1 = dateTime1;
-		this.dateTime2 = dateTime2;
+	public ProcesoFecha(LocalDateTime locatime1, LocalDateTime locatime2) {
+		this.locatime1 = locatime1;
+		this.locatime2 = locatime2;
 	}
 
 	public LocalDate getFecha1() {
@@ -66,38 +66,42 @@ public class ProcesoFecha {
 		this.time2 = time2;
 	}
 
-	public LocalDateTime getDateTime1() {
-		return dateTime1;
+	public LocalDateTime getLocatime1() {
+		return locatime1;
 	}
 
-	public void setDateTime1(LocalDateTime dateTime1) {
-		this.dateTime1 = dateTime1;
+	public void setLocatime1(LocalDateTime locatime1) {
+		this.locatime1 = locatime1;
 	}
 
-	public LocalDateTime getDateTime2() {
-		return dateTime2;
+	public LocalDateTime getLocatime2() {
+		return locatime2;
 	}
 
-	public void setDateTime2(LocalDateTime dateTime2) {
-		this.dateTime2 = dateTime2;
+	public void setLocatime2(LocalDateTime locatime2) {
+		this.locatime2 = locatime2;
 	}
-	
-	
-	public Period contarTiempoTranscurrido(int dia, int mes, int year) {
+
+	public Period contarTiempoTranscurrido() {
 		
-		LocalDate fechaHoy = LocalDate.now();
-		LocalDate fechaNac = LocalDate.of( dia, mes, year);
-		
-		Period periodo = Period.between(fechaNac, fechaHoy);
-	
+		Period periodo = Period.between(this.fecha1, this.fecha2);
 		return periodo;
 	}
-	
-	public String formatearFecha( String fecha ) {
-			
-		return fecha;
+
+	public String formatearFecha(LocalDate fecha) {
+		
+		DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/mm/yy");
+		String fechaFormateada = formato.format(fecha);
+		
+		return fechaFormateada;
 	}
 	
-	
-	
+	public String compararFechas() {
+		
+		
+		
+		String resultadoComp = "";
+		
+		return resultadoComp;
+	}
 }
