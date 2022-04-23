@@ -43,55 +43,113 @@ public class Persona {
 		return periodo.getYears();
 	}
 	
-	public void calcularEstacion(int dia, int mes, int year) {
-		
-		LocalDate fechaHoy = LocalDate.now();
-		LocalDate fechaNac = LocalDate.of( dia, mes, year);
-		
-		Period periodo = Period.between(fechaNac, fechaHoy);
-		
-		
-		switch (periodo.getMonths()) {
+	public String calcularEstacion(int dia, int mes, int year) {
+		String estacion = "";
+		switch (mes) {
 		case 1:
-			System.out.println("Verano");
+			if(dia > 21) {
+				estacion = "Verano";
+			}
 			break;
 		case 2:
-			System.out.println("Verano");
+			estacion =  "Verano";
 			break;
 		case 3:
-			System.out.println("Otoño");
+			if(dia > 21) {
+				estacion = "Otoño";
+			} else {
+				estacion = "Verano";
+			}
 			break;
 		case 4:
-			System.out.println("Otoño");
+			estacion = "Otoño";
 			break;
 		case 5:
-			System.out.println("Otoño");
+			estacion = "Otoño";
 			break;
 		case 6:
-			System.out.println("Otoño");
+			if(dia > 21) {
+				estacion = "Invierno";
+			} else {
+				estacion = "Otoño";
+			}
 			break;
 		case 7:
-			System.out.println("Otoño");
+			estacion = "Invierno";
 			break;
 		case 8:
-			System.out.println("Otoño");
+			estacion = "Invierno";
 			break;
 		case 9:
-			System.out.println("Primevera");
+			if(dia > 21) {
+				estacion = "Primavera";
+			} else {
+				estacion = "Invierno";
+			}
 			break;
 		case 10:
-			System.out.println("Primevera");
+			estacion = "Primavera";
 			break;
 		case 11:
-			System.out.println("Primevera");
+			estacion = "Primavera";
 			break;
 		case 12:
-			System.out.println("Verano");
+			if(dia > 21) {
+				estacion = "Verano";
+			} else {
+				estacion = "Invierno";
+			}
 			break;
 		default:
 			break;
 		}
 		
+		return estacion;
+	}
+	
+	public String devolverSigno(int dia, int mes, int year) {
+		String signo = "";
+		switch (mes) {
+		case 1:
+			signo = "Capricornio";
+			break;
+		case 2:
+			signo = "Acuario";
+		case 3:
+			signo = "Piscis";
+			break;
+		case 4:
+			signo = "Aries";
+			break;
+		case 5:
+			signo = "Tauro";
+			break;
+		case 6:
+			signo = "Geminis";
+			break;
+		case 7:
+			signo = "Cancer";
+			break;
+		case 8:
+			signo = "Leo";
+			break;
+		case 9:
+			signo = "Virgo";
+			break;
+		case 10:
+			signo = "Libra";
+			break;
+		case 11:
+			signo = "Escorpio";
+			break;
+		case 12:
+			signo = "Sagitario";
+			break;
+		default:
+			break;
+		}
+		
+		return signo;
 	}
 	
 }
